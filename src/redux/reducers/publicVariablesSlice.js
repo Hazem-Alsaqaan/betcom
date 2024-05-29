@@ -4,14 +4,14 @@ import { createSlice } from "@reduxjs/toolkit"
 const publicVariablesSlice = createSlice({
     name: "publicVariables",
     initialState:{
-        userSkipLogging: false
+        darkMood: false
     },
     reducers:{
-        setUserSkipLogging: (state)=>{
-            state.userSkipLogging = true
+        setDarkMood: (state)=>{
+            state.darkMood = !state.darkMood
         }
     }
 })
 
-export const {setUserSkipLogging} = publicVariablesSlice.actions
+export const {setDarkMood} = publicVariablesSlice.actions
 export default publicVariablesSlice.reducer
