@@ -14,7 +14,7 @@ const ButtomTab = createBottomTabNavigator()
 
 const InSideAppNavigation = () => {
     return (
-        <ButtomTab.Navigator>
+        <ButtomTab.Navigator >
             <ButtomTab.Screen name="home" component={HomeScreen} />
             <ButtomTab.Screen name="booking" component={BookingScreen} />
             <ButtomTab.Screen name="favourite" component={FavouriteScreen} />
@@ -35,15 +35,17 @@ const UserLogedOutNavigation = () => {
 const RootNavigation = () => {
     const { currentUser } = useSelector((state) => state.AuthSlice)
     return (
-        <NavigationContainer>
-            {
-                !currentUser?.id
-                    ?
-                    <UserLogedOutNavigation />
-                    :
-                    <InSideAppNavigation />
-            }
-        </NavigationContainer>
+        <>
+            <NavigationContainer>
+                {
+                    !currentUser?.id
+                        ?
+                        <UserLogedOutNavigation />
+                        :
+                        <InSideAppNavigation />
+                }
+            </NavigationContainer>
+        </>
     )
 }
 

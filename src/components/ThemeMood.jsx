@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Switch, Text, View } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import { setDarkMood } from "../redux/reducers/publicVariablesSlice"

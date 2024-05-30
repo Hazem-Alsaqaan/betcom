@@ -31,6 +31,10 @@
         "projectId": "6cb8a24e-7c6a-4da3-ab0d-5508f821f1d8"
       }
     },
-    "owner": "hazem-alsaqaan"
+    "owner": "hazem-alsaqaan",
+    "plugins": [
+      "expo-localization",
+      "expo-font"
+    ]
   }
 }

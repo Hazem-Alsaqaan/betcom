@@ -1,17 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit"
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const publicVariablesSlice = createSlice({
     name: "publicVariables",
-    initialState:{
-        darkMood: false
+    initialState: {
+        darkMood: false,
+        english: false,
     },
-    reducers:{
-        setDarkMood: (state)=>{
-            state.darkMood = !state.darkMood
-        }
-    }
-})
+    reducers: {
+        setDarkMood: (state) => {
+            state.darkMood = !state.darkMood;
+        },
+        setLanguage: (state, action) => {
+            state.english = !state.english;
+        },
+    },
+});
 
-export const {setDarkMood} = publicVariablesSlice.actions
-export default publicVariablesSlice.reducer
+export const { setDarkMood, setLanguage } = publicVariablesSlice.actions;
+export default publicVariablesSlice.reducer;
