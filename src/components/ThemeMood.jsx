@@ -1,11 +1,11 @@
-import { Switch, Text, View } from "react-native"
+import { Switch, Text, View, Platform } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import { setDarkMood } from "../redux/reducers/publicVariablesSlice"
 
 
 const ThemeMood = () => {
     const dispatch = useDispatch()
-    const { darkMood } = useSelector((state) => state.publicVariablesSlice)
+    const { darkMood, english } = useSelector((state) => state.publicVariablesSlice)
 
     const ToggleMood = () => {
         dispatch(setDarkMood())
@@ -15,11 +15,13 @@ const ThemeMood = () => {
             <Switch
                 trackColor={{ true: "#92A4BB", false: "#92A4BB" }}
                 thumbColor={"#E2BC2C"}
-                ios_backgroundColor={"#E2BC2C"}
+                ios_backgroundColor={"#92A4BB"}
                 onValueChange={() => ToggleMood()}
-                value={darkMood}
+                value={darkMood
+                }
+                className={Platform.OS === "ios" ? `mx-2` : `mx-0`}
             />
-            <Text className={`text-mainColor`}>Mood</Text>
+            <Text className={`text-mainColor font-rubikSemiBold`}>{english ? "Dark Mood" : "الوضع المظلم"}</Text>
         </View>
     )
 }

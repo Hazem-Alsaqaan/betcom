@@ -44,8 +44,7 @@ const SignInScreen = () => {
                     />
                 </TouchableOpacity>
                 <View className={`flex-row items-center justify-center`} >
-                    <Text className={`text-center mb-5 text-gray500 text-base font-rubikSemiBold`}>{english ? "didn't have an account ? " : "ليس لدي حساب ؟ "}  <Text className={`text-center mb-5 text-xl font-bold text-mainColor`}>{english ? "create account" : "إنشاء حساب"}</Text></Text>
-
+                    <Text className={`text-center mb-5 text-gray500 text-base font-rubikSemiBold`}>{english ? "didn't have an account ? " : "ليس لدي حساب ؟ "}  <Text className={`text-center mb-5 font-rubikSemiBold text-mainColor`}>{english ? "create account" : "إنشاء حساب"}</Text></Text>
                 </View>
                 <View className={`flex-row items-center justify-around`}>
                     <ThemeMood />

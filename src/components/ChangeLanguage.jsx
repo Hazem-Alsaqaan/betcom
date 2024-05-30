@@ -12,7 +12,7 @@ const ChangeLanguage = () => {
   return (
     <TouchableOpacity onPress={() => changeLanguageHandler()} className={`flex-row items-center justify-center gap-0.5`}>
       <MaterialIcons name="language" size={24} color="#C2D2E3" />
-      {<Text className={`text-gray400 text-xl font-rubikSemiBold`}>{english ? "العربية" : "En"}</Text>}
+      {<Text className={`text-gray400 text-base font-rubikSemiBold`}>{english ? "العربية" : "En"}</Text>}
     </TouchableOpacity>
   );
 };
