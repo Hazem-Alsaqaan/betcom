@@ -27,7 +27,7 @@ const UserLogedOutNavigation = () => {
     return (
         <RootStack.Navigator initialRouteName="sign-in">
             <RootStack.Screen name="sign-in" component={SignInScreen} options={{ headerShown: false }} />
-            <RootStack.Screen name="sign-up" component={SignUpScreen} />
+            <RootStack.Screen name="sign-up" component={SignUpScreen} options={{ headerShown: false }} />
         </RootStack.Navigator>
     )
 }
