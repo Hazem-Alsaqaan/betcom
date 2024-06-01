@@ -12,6 +12,7 @@ import axios from "axios";
 import { currentUserFulfilled, currentUserPendding, currentUserRejected } from "../redux/reducers/AuthSlice";
 import { userLoginWithPhone } from "../redux/actions/authActions";
 import Toast from "react-native-toast-message";
+import { toastConfig } from "../utils/configToastStyle";
 
 const SignInScreen = () => {
     const dispatch = useDispatch()
@@ -65,7 +66,7 @@ const SignInScreen = () => {
                     <ChangeLanguage />
                 </View>
             </ScrollView>
-            <Toast />
+            <Toast config={toastConfig} />
         </SafeAreaView>
     )
 }
