@@ -38,7 +38,7 @@ const RootNavigation = () => {
         <>
             <NavigationContainer>
                 {
-                    !currentUser?.id
+                    Object.keys(currentUser).length <= 0
                         ?
                         <UserLogedOutNavigation />
                         :
