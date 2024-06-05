@@ -13,7 +13,7 @@ import { currentUserFulfilled, currentUserPendding, currentUserRejected } from "
 import { userLoginWithPhone } from "../redux/actions/authActions";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "../utils/configToastStyle";
-
+import { appColors } from "../themes/colors"
 const SignInScreen = () => {
     const dispatch = useDispatch()
     const [phone, setPhone] = useState()
@@ -24,9 +24,11 @@ const SignInScreen = () => {
     const { darkMood, english } = useSelector((state) => state.publicVariablesSlice)
 
     // HANDLE LOGIN WITH PHONE AND PASSWORD
-    const loginWithPhoneAndPassword = async () => {
+    const loginWithPhoneAndPassword = () => {
         dispatch(userLoginWithPhone({ phone: `+2${phone}`, password: password }))
     }
+    // HANDLE LOGIN WITH Google
+    // const loginWithGoogle = async () => { }
     return (
         <SafeAreaView className={`flex-1 px-4 ${darkMood ? "bg-blackColor" : "bg-whiteColor"}`}>
             <ScrollView >
@@ -37,7 +39,7 @@ const SignInScreen = () => {
                 <AuthForms placeholder={english ? "phone number" : "رقم الهاتف"} secure={false} value={phone} setValue={setPhone} />
                 <AuthForms placeholder={english ? "password" : "كلمة المرور"} secure={true} value={password} setValue={setPassword} />
                 <View className={`flex-row items-center ${english ? "justify-start" : "justify-end"} mx-3`}>
-                    <MaterialCommunityIcons onPress={() => setRememberCheck(!rememberCheck)} name={!rememberCheck ? "checkbox-blank-outline" : "checkbox-marked"} size={24} color="#E2BC2C" />
+                    <MaterialCommunityIcons onPress={() => setRememberCheck(!rememberCheck)} name={!rememberCheck ? "checkbox-blank-outline" : "checkbox-marked"} size={24} color={appColors.mainColor} />
                     <Text className={`text-gray500 font-rubikSemiBold`}>{english ? "Remember Me" : "تذكرني"}</Text>
                 </View>
                 <View className={`flex items-center my-8`}>

@@ -30,7 +30,7 @@ export default function App() {
     return null
   }
   return (
-    <View className={`flex-1`} onLayout={loadFontsOnLayout}>
+    <View className={`flex-1 bg-whiteColor`} onLayout={loadFontsOnLayout}>
       <Provider store={store}>
         <RootNavigation />
         <StatusBar style="auto" />

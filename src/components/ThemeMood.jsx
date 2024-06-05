@@ -1,6 +1,7 @@
 import { Switch, Text, View, Platform } from "react-native"
 import { useDispatch, useSelector } from "react-redux"
 import { setDarkMood } from "../redux/reducers/publicVariablesSlice"
+import { appColors } from "../themes/colors"
 
 
 const ThemeMood = () => {
@@ -14,7 +15,7 @@ const ThemeMood = () => {
         <View className={`flex-row items-center justify-center`}>
             <Switch
                 trackColor={{ true: "#92A4BB", false: "#92A4BB" }}
-                thumbColor={"#E2BC2C"}
+                thumbColor={appColors.mainColor}
                 ios_backgroundColor={"#92A4BB"}
                 onValueChange={() => ToggleMood()}
                 value={darkMood

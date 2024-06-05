@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        mainColor: "#E2BC2C",
+        mainColor: "#F74D00",
         secondColor: "#332E33",
         whiteColor: "#ffffff",
         blackColor: "#000000",
@@ -13,7 +13,7 @@ module.exports = {
         gray500: "#63768D"
       },
       backgroundColor: {
-        mainColor: "#E2BC2C",
+        mainColor: "#F74D00",
         secondColor: "#332E33",
         whiteColor: "#ffffff",
         blackColor: "#000000",
@@ -23,7 +23,7 @@ module.exports = {
         gray500: "#63768D"
       },
       colors: {
-        mainColor: "#E2BC2C",
+        mainColor: "#F74D00",
         secondColor: "#332E33",
         whiteColor: "#ffffff",
         blackColor: "#000000",
