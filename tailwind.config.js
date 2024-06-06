@@ -10,7 +10,8 @@ module.exports = {
         blackColor: "#000000",
         gray300: "#C2D2E3",
         gray400: "#92A4BB",
-        gray500: "#63768D"
+        gray500: "#63768D",
+        lightColor: "#f1f5f9"
       },
       backgroundColor: {
         mainColor: "#F74D00",
@@ -20,7 +21,8 @@ module.exports = {
         bgColor: "#ffffff",
         gray300: "#C2D2E3",
         gray400: "#92A4BB",
-        gray500: "#63768D"
+        gray500: "#63768D",
+        lightColor: "#f1f5f9"
       },
       colors: {
         mainColor: "#F74D00",
@@ -29,7 +31,8 @@ module.exports = {
         blackColor: "#000000",
         gray300: "#C2D2E3",
         gray400: "#92A4BB",
-        gray500: "#63768D"
+        gray500: "#63768D",
+        lightColor: "#f1f5f9"
       },
       fontFamily: {
         rubikLight: ["rubik-light"],

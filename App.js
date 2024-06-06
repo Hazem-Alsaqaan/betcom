@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import RootNavigation from './src/navigations/RootNavigation';
-import { Provider } from 'react-redux';
-import store from './src/redux/store';
-import { useFonts } from "expo-font"
+import { StatusBar } from "expo-status-bar";
+import RootNavigation from "./src/navigations/RootNavigation";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
+import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from 'react';
-import { View } from 'react-native';
-
-SplashScreen.preventAutoHideAsync()
+import { useCallback } from "react";
+import { View } from "react-native";
+import { PaperProvider } from "react-native-paper";
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded, fontsError] = useFonts({
@@ -18,22 +18,24 @@ export default function App() {
     "rubik-semi-bold": require("./assets/fonts/Rubik-SemiBold.ttf"),
     "rubik-bold": require("./assets/fonts/Rubik-Bold.ttf"),
     "rubik-extra-bold": require("./assets/fonts/Rubik-ExtraBold.ttf"),
-  })
+  });
 
   const loadFontsOnLayout = useCallback(async () => {
     if (fontsLoaded || fontsError) {
-      await SplashScreen.hideAsync()
+      await SplashScreen.hideAsync();
     }
-  }, [fontsLoaded, fontsError])
+  }, [fontsLoaded, fontsError]);
 
   if (!fontsLoaded && !fontsError) {
-    return null
+    return null;
   }
   return (
     <View className={`flex-1 bg-whiteColor`} onLayout={loadFontsOnLayout}>
       <Provider store={store}>
-        <RootNavigation />
-        <StatusBar style="auto" />
+        <PaperProvider>
+          <RootNavigation />
+          <StatusBar style="auto" />
+        </PaperProvider>
       </Provider>
     </View>
   );

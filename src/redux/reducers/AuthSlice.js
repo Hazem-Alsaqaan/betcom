@@ -12,19 +12,6 @@ const AuthSlice = createSlice({
         errorCurrentUser: null
     },
     reducers: {
-        // currentUserPendding: (state) => {
-        //     state.loadingCurrentUser = true
-        //     state.errorCurrentUser = null
-        // },
-        // currentUserFulfilled: (state, action) => {
-        //     state.loadingCurrentUser = false
-        //     state.currentUser = action.payload.user
-        //     state.token = action.payload.token
-        // },
-        // currentUserRejected: (state, action) => {
-        //     state.loadingCurrentUser = false
-        //     state.errorCurrentUser = action.payload
-        // },
         signOutCurrentUser: (state, action) => {
             state.currentUser = {}
         }
@@ -46,5 +33,5 @@ const AuthSlice = createSlice({
     }
 })
 
-export const { currentUserPendding, currentUserFulfilled, currentUserRejected, signOutCurrentUser } = AuthSlice.actions
+export const { signOutCurrentUser } = AuthSlice.actions
 export default AuthSlice.reducer

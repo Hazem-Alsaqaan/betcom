@@ -1,22 +1,21 @@
-import { Text, TouchableOpacity, View } from "react-native"
-import { useDispatch, useSelector } from "react-redux"
-import { signOutCurrentUser } from "../redux/reducers/AuthSlice"
+import { ScrollView, View } from "react-native";
+import ShowPaperModal from "../components/ShowPaperModale";
+import { useState } from "react";
+import ModalFromPaper from "../components/ModalFromPaper";
 
 const HomeScreen = () => {
-    const dispatch = useDispatch()
-    const { currentUser } = useSelector((state) => state.AuthSlice)
-    const signOuthandler = () => {
-        dispatch(signOutCurrentUser())
-    }
-    return (
-        <View className={`flex-1 items-center justify-center`}>
-            <Text>Home Screen</Text>
-            <Text>{currentUser?.username}</Text>
-            <TouchableOpacity onPress={() => signOuthandler()} className={` bg-gray500 px-8 py-1 rounded shadow-2xl my-5`}>
-                <Text className={`text-whiteColor`}>Sign Out</Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <View className={`flex-1 items-center bg-whiteColor px-4`}>
+      <ScrollView className={`flex-1 w-full`}>
+        <ShowPaperModal
+          title={"حدد عدد الغرف"}
+          showModalHandler={setShowModal}
+        />
+      </ScrollView>
+      <ModalFromPaper visible={showModal} onDismiss={setShowModal} />
+    </View>
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
