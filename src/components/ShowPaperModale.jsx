@@ -1,22 +1,15 @@
-import { Button } from "react-native-paper";
-import { appColors } from "../themes/colors";
+import Fontisto from '@expo/vector-icons/Fontisto';
+import { TouchableOpacity, Text } from "react-native";
 
 const ShowPaperModal = ({ title, showModalHandler }) => {
   return (
-    <Button
-      onPress={() => showModalHandler(true)}
-      icon={"arrow-down-drop-circle-outline"}
-      mode="outlined"
-      style={{ borderWidth: 0, borderRadius: 8, width: "100%", marginBottom: 10 }}
-      contentStyle={{
-        backgroundColor: appColors.lightColor,
-        justifyContent: "space-between",
-      }}
-      textColor={appColors.gray400}
-      labelStyle={{ fontWeight: "bold" }}
+    <TouchableOpacity 
+    onPress={() => showModalHandler(true)}
+    className={`w-full flex-row justify-between items-center bg-lightColor rounded-lg px-4 py-2 mb-8`}
     >
-      {title}
-    </Button>
+      <Fontisto name="equalizer" size={24} color="black" style={{transform: [{rotate: "90deg"}]}}/>
+      <Text className={`font-rubikMedium`}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 export default ShowPaperModal;
