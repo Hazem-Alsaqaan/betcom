@@ -1,13 +1,13 @@
 import { Text, View } from "react-native"
 
 
-const BookingScreen = () => {
+const MyUnitsScreen = () => {
 
     return (
         <View className={`flex-1 items-center justify-center`}>
-            <Text>Booking Screen</Text>
+            <Text>my Units Screen</Text>
         </View>
     )
 }
 
-export default BookingScreen
+export default MyUnitsScreen

@@ -8,9 +8,10 @@ module.exports = {
         secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
-        gray300: "#C2D2E3",
-        gray400: "#92A4BB",
-        gray500: "#63768D",
+        gray300: "#CFD3D4",
+        gray400: "#A1A3A4",
+        gray500: "#727474",
+        gray600: "#525353",
         lightColor: "#f1f5f9"
       },
       backgroundColor: {
@@ -19,9 +20,10 @@ module.exports = {
         whiteColor: "#ffffff",
         blackColor: "#000000",
         bgColor: "#ffffff",
-        gray300: "#C2D2E3",
-        gray400: "#92A4BB",
-        gray500: "#63768D",
+        gray300: "#CFD3D4",
+        gray400: "#A1A3A4",
+        gray500: "#727474",
+        gray600: "#525353",
         lightColor: "#f1f5f9"
       },
       colors: {
@@ -29,9 +31,10 @@ module.exports = {
         secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
-        gray300: "#C2D2E3",
-        gray400: "#92A4BB",
-        gray500: "#63768D",
+        gray300: "#CFD3D4",
+        gray400: "#A1A3A4",
+        gray500: "#727474",
+        gray600: "#525353",
         lightColor: "#f1f5f9"
       },
       fontFamily: {

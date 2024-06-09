@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import HomeScreen from "../screens/HomeScreen.jsx"
-import BookingScreen from "../screens/BookingScreen"
+import MyUnitsScreen from "../screens/MyUnitsScreen"
 import FavouriteScreen from "../screens/FavouriteScreen"
 import ProfileScreen from "../screens/ProfileScreen"
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -22,29 +22,29 @@ const InSideAppNavigation = () => {
                 // headerTitleAlign: "center",
                 // headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor },
                 headerShown: false,
-                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray400"}`}>{english ? "home" : "الصفحة الرئيسية"}</Text>,
-                tabBarIcon: ({ focused }) => <FontAwesome name="home" size={24} color={focused ? appColors.mainColor : appColors.gray300} />
+                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "home" : "الصفحة الرئيسية"}</Text>,
+                tabBarIcon: ({ focused }) => <FontAwesome name="home" size={24} color={focused ? appColors.mainColor : appColors.gray400} />
             }} />
-            <ButtomTab.Screen name="booking" component={BookingScreen} options={{ 
-                headerTitle: english ? "booking" : "حجوزاتي", 
+            <ButtomTab.Screen name="booking" component={MyUnitsScreen} options={{ 
+                headerTitle: english ? "my units" : "وحداتي", 
                 headerTitleAlign: "center", 
                 headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor }, 
-                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray400"}`}>{english ? "booking" : "حجوزاتي"}</Text>,
-                tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="bookmark-multiple" size={24} color={focused ? appColors.mainColor : appColors.gray300} />
+                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "my units" : "وحداتي"}</Text>,
+                tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="bookmark-multiple" size={24} color={focused ? appColors.mainColor : appColors.gray400} />
             }} />
             <ButtomTab.Screen name="favourite" component={FavouriteScreen} options={{ 
                 headerTitle: english ? "favourite" : "مفضلتي", 
                 headerTitleAlign: "center", 
                 headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor }, 
-                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray400"}`}>{english ? "favourite" : "مفضلتي"}</Text>,
-                tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="cards-heart-outline" size={24} color={focused ? appColors.mainColor : appColors.gray300} />
+                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "favourite" : "مفضلتي"}</Text>,
+                tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="cards-heart-outline" size={24} color={focused ? appColors.mainColor : appColors.gray400} />
                 }} />
             <ButtomTab.Screen name="profile" component={ProfileScreen} options={{ 
                 headerTitle: english ? "profile" : "الحساب", 
                 headerTitleAlign: "center", 
                 headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor }, 
-                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray400"}`}>{english ? "profile" : "الحساب"}</Text>,
-                tabBarIcon: ({ focused }) => <FontAwesome6 name="circle-user" size={24} color={focused ? appColors.mainColor : appColors.gray300} />
+                tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "profile" : "الحساب"}</Text>,
+                tabBarIcon: ({ focused }) => <FontAwesome6 name="circle-user" size={24} color={focused ? appColors.mainColor : appColors.gray400} />
                 }} />
         </ButtomTab.Navigator>
     )

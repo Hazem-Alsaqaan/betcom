@@ -65,10 +65,12 @@ const ModalFromPaper = ({ visible, onDismiss }) => {
       {/* DEFINE number and price */}
       <Text>لايزيد عدد غرف عن ٢٠</Text>
       <MinMaxPrice title={"عدد الغرف"}  setValue={setRoomsValue} uniqueValue={numberOfRooms}/>
+      <Text>حدد الحد الأدنى للسعر</Text>
       <MinMaxPrice title={"الحد الادنى"} setValue={setMinPriceVal} uniqueValue={minPrice}/>
+      <Text>حدد الحد الأقصى للسعر</Text>
       <MinMaxPrice title={"الحد الاقصى"} setValue={setMaxPriceVal} uniqueValue={maxPrice}/>
       <View className={`flex-row justify-center items-center my-4`}>
-      <TouchableOpacity onPress={()=>dispatch(resetValues())} className={` bg-neutral-600 p-2 rounded-l-full w-36 flex items-center justify-center`}>
+      <TouchableOpacity onPress={()=>dispatch(resetValues())} className={`bg-gray600 p-2 rounded-l-full w-36 flex items-center justify-center`}>
         <Text className={`text-whiteColor text-base font-rubikMedium`}>مسـح القيم</Text>
       </TouchableOpacity>
       <TouchableOpacity className={`bg-mainColor p-2 rounded-r-full w-36 flex items-center justify-center`}>

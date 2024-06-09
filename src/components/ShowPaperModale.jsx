@@ -7,7 +7,7 @@ const ShowPaperModal = ({ title, showModalHandler }) => {
       onPress={() => showModalHandler(true)}
       icon={"arrow-down-drop-circle-outline"}
       mode="outlined"
-      style={{ borderWidth: 0, borderRadius: 8 }}
+      style={{ borderWidth: 0, borderRadius: 8, width: "100%", marginBottom: 10 }}
       contentStyle={{
         backgroundColor: appColors.lightColor,
         justifyContent: "space-between",
