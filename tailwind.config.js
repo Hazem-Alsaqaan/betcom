@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       textColor: {
         mainColor: "#F74D00",
-        secondColor: "#332E33",
+        secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
         gray300: "#C2D2E3",
@@ -15,7 +15,7 @@ module.exports = {
       },
       backgroundColor: {
         mainColor: "#F74D00",
-        secondColor: "#332E33",
+        secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
         bgColor: "#ffffff",
@@ -26,7 +26,7 @@ module.exports = {
       },
       colors: {
         mainColor: "#F74D00",
-        secondColor: "#332E33",
+        secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
         gray300: "#C2D2E3",

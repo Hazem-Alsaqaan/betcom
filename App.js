@@ -7,6 +7,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { View } from "react-native";
 import { PaperProvider } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
@@ -30,13 +31,13 @@ export default function App() {
     return null;
   }
   return (
-    <View className={`flex-1 bg-whiteColor`} onLayout={loadFontsOnLayout}>
+    <SafeAreaView className={`flex-1 bg-whiteColor`} onLayout={loadFontsOnLayout}>
       <Provider store={store}>
         <PaperProvider>
           <RootNavigation />
           <StatusBar style="auto" />
         </PaperProvider>
       </Provider>
-    </View>
+    </SafeAreaView>
   );
 }

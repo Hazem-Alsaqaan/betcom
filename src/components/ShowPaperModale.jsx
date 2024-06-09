@@ -1,10 +1,10 @@
 import { Button } from "react-native-paper";
 import { appColors } from "../themes/colors";
 
-const ShowPaperModal = ({title, showModalHandler}) => {
+const ShowPaperModal = ({ title, showModalHandler }) => {
   return (
     <Button
-    onPress={()=>showModalHandler(true)}
+      onPress={() => showModalHandler(true)}
       icon={"arrow-down-drop-circle-outline"}
       mode="outlined"
       style={{ borderWidth: 0, borderRadius: 8 }}
@@ -15,7 +15,7 @@ const ShowPaperModal = ({title, showModalHandler}) => {
       textColor={appColors.gray400}
       labelStyle={{ fontWeight: "bold" }}
     >
-     {title}
+      {title}
     </Button>
   );
 };

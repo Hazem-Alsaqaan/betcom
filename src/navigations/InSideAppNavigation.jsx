@@ -18,9 +18,10 @@ const InSideAppNavigation = () => {
     return (
         <ButtomTab.Navigator screenOptions={{ tabBarStyle: { height: 65, paddingBottom: 10, paddingHorizontal: 5 } }}>
             <ButtomTab.Screen name="home" component={HomeScreen} options={{
-                headerTitle: english ? "betcom" : "بيتكم",
-                headerTitleAlign: "center",
-                headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor },
+                // headerTitle: english ? "betcom" : "بيتكم",
+                // headerTitleAlign: "center",
+                // headerTitleStyle: { fontWeight: "bold", color: appColors.mainColor },
+                headerShown: false,
                 tabBarLabel: ({ focused }) => <Text className={`font-bold ${focused ? "text-mainColor" : "text-gray400"}`}>{english ? "home" : "الصفحة الرئيسية"}</Text>,
                 tabBarIcon: ({ focused }) => <FontAwesome name="home" size={24} color={focused ? appColors.mainColor : appColors.gray300} />
             }} />
