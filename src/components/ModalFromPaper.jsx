@@ -3,7 +3,7 @@ import { appColors } from "../themes/colors";
 import { TouchableOpacity, View , Platform} from "react-native";
 import MinMaxPrice from "./MinMaxPrice";
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseMaxPrice, decreaseMinPrice, decreaseNumberOfRooms, increaseMaxPrice, increaseMinPrice, increaseNumberOfRooms, resetValues, setMaxPrice, setMinPrice, setNumberOfRooms } from "../redux/reducers/publicVariablesSlice";
+import { decreaseMaxPrice, decreaseMinPrice, decreaseNumberOfRooms, increaseMaxPrice, increaseMinPrice, increaseNumberOfRooms, resetValues, setMaxPrice, setMinPrice, setNumberOfRooms, setSearchMood } from "../redux/reducers/publicVariablesSlice";
 import { searchUnits } from "../redux/actions/UnitsActions";
 
 const ModalFromPaper = ({ visible, onDismiss }) => {

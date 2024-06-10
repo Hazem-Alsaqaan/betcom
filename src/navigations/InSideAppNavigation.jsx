@@ -32,8 +32,8 @@ const InSideAppNavigation = () => {
                 tabBarLabel: ({ focused }) => <Text className={` font-rubikMedium text-xs ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "my units" : "وحداتي"}</Text>,
                 tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="bookmark-multiple" size={24} color={focused ? appColors.mainColor : appColors.gray400} />
             }} />
-            <ButtomTab.Screen name="push-units" component={MyUnitsScreen} options={{ 
-                headerTitle: english ? "push unit" : "اعرض وحدتك", 
+            <ButtomTab.Screen name="show-your-unit" component={MyUnitsScreen} options={{ 
+                headerTitle: english ? "show your unit" : "اعرض وحدتك", 
                 headerTitleAlign: "center", 
                 headerTitleStyle: {color: appColors.mainColor, fontFamily: "rubik-semi-bold"}, 
                 tabBarLabel: ({ focused }) => <Text className={` font-rubikMedium text-xs ${focused ? "text-mainColor" : "text-gray500"}`}>{english ? "push unit" : "اعرض وحدتك"}</Text>,

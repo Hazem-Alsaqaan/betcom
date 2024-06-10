@@ -9,7 +9,7 @@ const publicVariablesSlice = createSlice({
         maxPrice: 0,
         numberOfRooms: 0,
         activePage: 1,
-        numberOfPages: [1, 2, 3, 4, 5, 6]
+        numberOfPages: [1, 2, 3, 4, 5, 6],
     },
     reducers: {
         setActivePage: (state, action)=>{
@@ -81,6 +81,6 @@ export const {
     resetValues,
     setActivePage,
     decreaseActivePage,
-    increaseActivePage
+    increaseActivePage,
     } = publicVariablesSlice.actions;
 export default publicVariablesSlice.reducer;

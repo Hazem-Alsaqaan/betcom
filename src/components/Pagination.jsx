@@ -7,6 +7,7 @@ import { decreaseActivePage, increaseActivePage, setActivePage } from "../redux/
 const Pagination = ()=>{
     const dispatch = useDispatch()
     const {activePage, numberOfPages} = useSelector((state)=>state.publicVariablesSlice)
+
     const PressNumberPage = (item)=>{
         dispatch(setActivePage(item))
     }

@@ -21,18 +21,23 @@ const ShowUnitsOnPagination =()=>{
     return(
         <>
         <Pagination />
-         <ScrollView className={`flex-1 w-full`} showsVerticalScrollIndicator={false}>
         {allUnitsLoading ?
-        <View >
+        <View className={`flex-1 w-full py-10 it`}>
         <Text>Loading...</Text>
         <ProgressBar indeterminate color={appColors.mainColor} style={{backgroundColor: appColors.lightColor}}/>
         </View> 
         :
-        allUnits.map((item)=>(
+        allUnits.length > 0 ? 
+        <ScrollView className={`flex-1 w-full`} showsVerticalScrollIndicator={false}>
+        {allUnits.map((item)=>(
             <SingleCard key={item._id} item={item}/>
-            ))
-            }
+            ))}
         </ScrollView>
+        :
+        <View className={`w-full flex-1 items-center justify-center py-10`}>
+            <Text className={`font-rubikMedium text-xl`}>لا يوجد مزيد من النتائج ...</Text>
+        </View>
+            } 
         </>
     )
 }
