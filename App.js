@@ -5,9 +5,10 @@ import store from "./src/redux/store";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
-import { View } from "react-native";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Toast from "react-native-toast-message";
+import { toastConfig } from "./src/utils/configToastStyle";
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       <Provider store={store}>
         <PaperProvider>
           <RootNavigation />
+          <Toast config={toastConfig} />
           <StatusBar style="auto" />
         </PaperProvider>
       </Provider>

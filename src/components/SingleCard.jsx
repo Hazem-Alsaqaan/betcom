@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { appColors } from "../themes/colors";
 import { useState } from "react";
 
-const SingleCard = () => {
+const SingleCard = ({item}) => {
     const [favourite, setFavourite] = useState(false)
     return (
         <View className={`z-0 border-2 border-solid border-gray300 rounded-xl my-2 overflow-hidden`}>
@@ -15,29 +15,29 @@ const SingleCard = () => {
                 </TouchableOpacity>
                 <Image
                     source={{
-                        uri: "https://img.freepik.com/free-photo/3d-rendering-loft-luxury-living-room-with-bookshelf-near-bookshelf_105762-2224.jpg?t=st=1717921927~exp=1717925527~hmac=159f8e9f4510bad14f753cf54a289a52912778a64e3b7f4c65ee238f44e466c5&w=826",
+                        uri: item?.images[0],
                     }}
                     alt="UNIT PICTURE"
                     className={`w-full h-full`}
                 />
             </View>
             {/* CONTENT BOX COMPONENT */}
-            <View className={`p-2 flex gap-1`}>
-                <Text className={`text-center font-rubikSemiBold text-mainColor text-xl mb-1`}>إيجار</Text>
-                <Text className={`font-rubikMedium`}>شقة تحتوى على 5 غرف و 2 حمام</Text>
-                <Text className={`font-rubikMedium`}>المساحة : 150 م</Text>
-                <Text className={` font-rubikBold text-mainColor`}>السعر/ 500</Text>
+            <View className={`flex items-end gap-1 p-2`}>
+                <Text className={`text-center font-rubikSemiBold text-mainColor text-xl mb-1 w-full`}>إيجار</Text>
+                <Text className={`font-rubikMedium`}>شقة تحتوى على {item?.rooms} غرف و {item?.bathrooms} حمام</Text>
+                <Text className={`font-rubikMedium`}>المساحة : {item?.apartment_area} م</Text>
+                <Text className={` font-rubikBold text-mainColor`}>السعر/ {item?.price}</Text>
                 <View className={`flex-row items-center justify-end gap-1`}>
-                    <Text className={`font-rubikMedium`}>4.1</Text>
+                    <Text className={`font-rubikMedium`}>{item?.rating}</Text>
                     <Ionicons name="star" size={20} color={appColors.mainColor} />
                 </View>
                 <View className={`flex-row items-end justify-end`}>
-                    <Text className={`font-rubikMedium`}>
-                        شارع النهضة المتفرع من شارع عزيز عثمان
-                    </Text>
-                    <Ionicons name="location" size={24} color={appColors.blackColor} style={{ marginRight: -1 }} />
+                    <Text className={`font-rubikMedium`}>{`${item?.city} ${item?.street}`}</Text>
+                    <Ionicons name="location" size={24} color={appColors.blackColor} style={{ marginRight: -2 }} />
                 </View>
-                <CustomButton title={"معاينة"} />
+                <View className={`w-full`}>
+                <CustomButton title={"معاينة"}/>
+                </View>
             </View>
         </View>
     );

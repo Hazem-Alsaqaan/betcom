@@ -1,5 +1,6 @@
 
 import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
+import { appColors } from "../themes/colors";
 
 export const toastConfig = {
     success: (props) => (
@@ -17,13 +18,14 @@ export const toastConfig = {
     error: (props) => (
         <ErrorToast
             {...props}
-            style={{ backgroundColor: "#E2BC2C" }}
+            style={{ backgroundColor: appColors.lightColor }}
             text1Style={{
-                fontSize: 17
+                fontSize: 17,
+                color: appColors.mainColor
             }}
             text2Style={{
                 fontSize: 15,
-                color: "#f1f5f9"
+                color: appColors.gray600
             }}
         />
     ),

@@ -8,8 +8,6 @@ import AuthButton from "../components/AuthButton";
 import ThemeMood from "../components/ThemeMood";
 import { useDispatch, useSelector } from "react-redux";
 import ChangeLanguage from "../components/ChangeLanguage";
-import axios from "axios";
-import { currentUserFulfilled, currentUserPendding, currentUserRejected } from "../redux/reducers/AuthSlice";
 import { userLoginWithPhone } from "../redux/actions/authActions";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "../utils/configToastStyle";

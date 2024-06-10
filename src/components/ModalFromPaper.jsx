@@ -1,22 +1,26 @@
 import { Modal, Text } from "react-native-paper";
 import { appColors } from "../themes/colors";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View , Platform} from "react-native";
 import MinMaxPrice from "./MinMaxPrice";
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseMaxPrice, decreaseMinPrice, decreaseNumberOfRooms, increaseMaxPrice, increaseMinPrice, increaseNumberOfRooms, resetValues, setMaxPrice, setMinPrice, setNumberOfRooms } from "../redux/reducers/publicVariablesSlice";
+import { searchUnits } from "../redux/actions/UnitsActions";
 
 const ModalFromPaper = ({ visible, onDismiss }) => {
   const dispatch = useDispatch()
+  const {token} = useSelector((state)=> state.AuthSlice)
+  const {maxPrice, minPrice, numberOfRooms, activePage} = useSelector((state)=>state.publicVariablesSlice)
+
   const ModalStyle = {
+    position: "absolute",
+    bottom: Platform.OS === "ios" ? -40 : 0,
+    left: 0,
+    width: "100%",
     backgroundColor: appColors.whiteColor,
     borderTopStartRadius: 24,
     borderTopRightRadius: 24,
     padding: 20,
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    height: 450,
+    paddingBottom: 70,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -25,8 +29,7 @@ const ModalFromPaper = ({ visible, onDismiss }) => {
     borderLeftWidth: 2,
     borderStyle: "solid",
     borderColor: appColors.mainColor,
-  };
-  const {maxPrice, minPrice, numberOfRooms} = useSelector((state)=>state.publicVariablesSlice)
+    };
 
   const setRoomsValue = (mood)=>{
     if(mood === "increase"){
@@ -56,6 +59,12 @@ const ModalFromPaper = ({ visible, onDismiss }) => {
       dispatch(setMaxPrice(mood))
     }
   }
+
+  const submitSearchUnits = ()=>{
+    dispatch(searchUnits({token: token, heighestPrice: maxPrice, minimumPrice: minPrice, rooms: numberOfRooms ,page: 1}))
+    dispatch(resetValues())
+    onDismiss(false)
+  }
   return (
     <Modal
       visible={visible}
@@ -63,7 +72,7 @@ const ModalFromPaper = ({ visible, onDismiss }) => {
       contentContainerStyle={ModalStyle}
     >
       {/* DEFINE number and price */}
-      <Text>لايزيد عدد غرف عن ٢٠</Text>
+      <Text >لايزيد عدد غرف عن ٢٠</Text>
       <MinMaxPrice title={"عدد الغرف"}  setValue={setRoomsValue} uniqueValue={numberOfRooms}/>
       <Text>حدد الحد الأدنى للسعر</Text>
       <MinMaxPrice title={"الحد الادنى"} setValue={setMinPriceVal} uniqueValue={minPrice}/>
@@ -73,7 +82,7 @@ const ModalFromPaper = ({ visible, onDismiss }) => {
       <TouchableOpacity onPress={()=>dispatch(resetValues())} className={`bg-gray600 p-2 rounded-l-full w-36 flex items-center justify-center`}>
         <Text className={`text-whiteColor text-base font-rubikMedium`}>مسـح القيم</Text>
       </TouchableOpacity>
-      <TouchableOpacity className={`bg-mainColor p-2 rounded-r-full w-36 flex items-center justify-center`}>
+      <TouchableOpacity onPress={()=>submitSearchUnits()} className={`bg-mainColor p-2 rounded-r-full w-36 flex items-center justify-center`}>
         <Text className={`text-whiteColor text-base font-rubikMedium`}>تطبيق</Text>
       </TouchableOpacity>
       </View>
