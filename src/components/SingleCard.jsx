@@ -3,9 +3,19 @@ import CustomButton from "./CustomButton";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { appColors } from "../themes/colors";
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const SingleCard = ({item}) => {
+    const navigation = useNavigation()
     const [favourite, setFavourite] = useState(false)
+    const viewSpecificUnit = ()=>{
+        navigation.setParams({unitId: item._id})
+        navigation.navigate("unit-stack", {
+            screen: "specific-unit",
+            params: {unitId: item._id}
+        }
+    )
+    }
     return (
         <View className={`z-0 border-2 border-solid border-gray300 rounded-xl my-2 overflow-hidden`}>
             {/* IMAGE BOX COMPONENT */}
@@ -36,7 +46,7 @@ const SingleCard = ({item}) => {
                     <Ionicons name="location" size={24} color={appColors.blackColor} style={{ marginRight: -2 }} />
                 </View>
                 <View className={`w-full`}>
-                <CustomButton title={"معاينة"}/>
+                <CustomButton title={"معاينة"} handlePress={viewSpecificUnit} />
                 </View>
             </View>
         </View>

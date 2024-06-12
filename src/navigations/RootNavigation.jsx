@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import SignInScreen from "../screens/SignInScreen"
 import SignUpScreen from "../screens/SignUpScreen"
 import { useSelector } from "react-redux"
-import InSideAppNavigation from "./InSideAppNavigation"
+import StackWithUser from "./StackWithUser"
 
 const RootStack = createNativeStackNavigator()
 
@@ -28,7 +28,7 @@ const RootNavigation = () => {
                         ?
                         <UserLogedOutNavigation />
                         :
-                        <InSideAppNavigation />
+                        <StackWithUser />
                 }
             </NavigationContainer>
         </>

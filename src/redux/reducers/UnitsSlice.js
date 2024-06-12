@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getAllUnits, searchUnits } from "../actions/UnitsActions"
+import { getAllUnits, getSpecificUnit, searchUnits } from "../actions/UnitsActions"
 
 
 const UnitsSlice = createSlice({
@@ -7,7 +7,10 @@ const UnitsSlice = createSlice({
     initialState: {
         allUnits: [],
         allUnitsLoading: false,
-        allUnitsError: null
+        allUnitsError: null,
+        specificUnit: {},
+        specificUnitLoading: false,
+        specificUnitError: null,
     },
     extraReducers: (builder)=>{
         builder.addCase(getAllUnits.pending, (state, action)=>{
@@ -34,6 +37,19 @@ const UnitsSlice = createSlice({
         builder.addCase(searchUnits.rejected, (state, action)=>{
             state.allUnitsLoading = false
             state.allUnitsError = action.payload.errorMessage
+        }),
+        // Get Specific Unit By Unit_Id
+        builder.addCase(getSpecificUnit.pending, (state, action)=>{
+            state.specificUnitLoading = true;
+            state.specificUnitError = null
+        }),
+        builder.addCase(getSpecificUnit.fulfilled, (state, action)=>{
+            state.specificUnitLoading = false;
+            if(Object.keys(action.payload).length > 0){state.specificUnit = action.payload}
+        }),
+        builder.addCase(getSpecificUnit.rejected, (state, action)=>{
+            state.specificUnitLoading = false;
+            state.specificUnitError = action.payload.errorMessage
         })
     }
 })
