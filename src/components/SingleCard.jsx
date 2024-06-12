@@ -5,23 +5,20 @@ import { appColors } from "../themes/colors";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const SingleCard = ({item}) => {
+const SingleCard = ({ item }) => {
     const navigation = useNavigation()
     const [favourite, setFavourite] = useState(false)
-    const viewSpecificUnit = ()=>{
-        navigation.setParams({unitId: item._id})
-        navigation.navigate("unit-stack", {
-            screen: "specific-unit",
-            params: {unitId: item._id}
-        }
-    )
+    const viewSpecificUnit = () => {
+        navigation.setParams({ unitId: item._id })
+        navigation.navigate("unit-tabs", {unitId: item._id}
+        )
     }
     return (
         <View className={`z-0 border-2 border-solid border-gray300 rounded-xl my-2 overflow-hidden`}>
             {/* IMAGE BOX COMPONENT */}
             <View className={`w-full h-52 bg-lightColor relative`}>
-                <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={()=>setFavourite((prev)=>!prev)}>
-                <Ionicons name="heart" size={24} color={favourite ? appColors.mainColor : appColors.whiteColor}/>
+                <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={() => setFavourite((prev) => !prev)}>
+                    <Ionicons name="heart" size={24} color={favourite ? appColors.mainColor : appColors.whiteColor} />
                 </TouchableOpacity>
                 <Image
                     source={{
@@ -46,7 +43,7 @@ const SingleCard = ({item}) => {
                     <Ionicons name="location" size={24} color={appColors.blackColor} style={{ marginRight: -2 }} />
                 </View>
                 <View className={`w-full`}>
-                <CustomButton title={"معاينة"} handlePress={viewSpecificUnit} />
+                    <CustomButton title={"معاينة"} handlePress={viewSpecificUnit} />
                 </View>
             </View>
         </View>
