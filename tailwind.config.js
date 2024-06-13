@@ -8,11 +8,13 @@ module.exports = {
         secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
+        gray50: "rgb(250 250 250)",
+        gray100: "rgb(245 245 245)",
         gray300: "#CFD3D4",
         gray400: "#A1A3A4",
         gray500: "#727474",
         gray600: "#525353",
-        lightColor: "#f1f5f9"
+        lightColor: "#f1f5f9",
       },
       backgroundColor: {
         mainColor: "#F74D00",
@@ -20,22 +22,26 @@ module.exports = {
         whiteColor: "#ffffff",
         blackColor: "#000000",
         bgColor: "#ffffff",
+        gray50: "rgb(250 250 250)",
+        gray100: "rgb(245 245 245)",
         gray300: "#CFD3D4",
         gray400: "#A1A3A4",
         gray500: "#727474",
         gray600: "#525353",
-        lightColor: "#f1f5f9"
+        lightColor: "#f1f5f9",
       },
       colors: {
         mainColor: "#F74D00",
         secondColor: "#ffece3",
         whiteColor: "#ffffff",
         blackColor: "#000000",
+        gray50: "rgb(250 250 250)",
+        gray100: "rgb(245 245 245)",
         gray300: "#CFD3D4",
         gray400: "#A1A3A4",
         gray500: "#727474",
         gray600: "#525353",
-        lightColor: "#f1f5f9"
+        lightColor: "#f1f5f9",
       },
       fontFamily: {
         rubikLight: ["rubik-light"],
@@ -45,9 +51,8 @@ module.exports = {
         rubikSemiBold: ["rubik-semi-bold"],
         rubikBold: ["rubik-bold"],
         rubikExtraBold: ["rubik-extra-bold"],
-      }
+      },
     },
   },
   plugins: [],
-}
-
+};
