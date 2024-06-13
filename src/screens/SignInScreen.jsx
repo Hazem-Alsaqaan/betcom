@@ -25,8 +25,6 @@ const SignInScreen = () => {
     const loginWithPhoneAndPassword = () => {
         dispatch(userLoginWithPhone({ phone: `+2${phone}`, password: password }))
     }
-    // HANDLE LOGIN WITH Google
-    // const loginWithGoogle = async () => { }
     return (
         <SafeAreaView className={`flex-1 px-4 ${darkMood ? "bg-blackColor" : "bg-whiteColor"}`}>
             <ScrollView >

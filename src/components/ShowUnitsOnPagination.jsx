@@ -3,9 +3,10 @@ import SingleCard from "./SingleCard"
 import { useEffect } from "react"
 import { getAllUnits } from "../redux/actions/UnitsActions"
 import { ScrollView, Text, View } from "react-native"
-import { ProgressBar } from 'react-native-paper';
-import { appColors } from "../themes/colors"
 import Pagination from "./Pagination"
+import LoadingData from "./LoadingData"
+// import { ProgressBar } from 'react-native-paper';
+// import { appColors } from "../themes/colors"
 
 
 const ShowUnitsOnPagination =()=>{
@@ -22,10 +23,7 @@ const ShowUnitsOnPagination =()=>{
         <>
         <Pagination />
         {allUnitsLoading ?
-        <View className={`flex-1 w-full py-10 it`}>
-        <Text>Loading...</Text>
-        <ProgressBar indeterminate color={appColors.mainColor} style={{backgroundColor: appColors.lightColor}}/>
-        </View> 
+        <LoadingData/>
         :
         allUnits.length > 0 ? 
         <ScrollView className={`flex-1 w-full`} showsVerticalScrollIndicator={false}>

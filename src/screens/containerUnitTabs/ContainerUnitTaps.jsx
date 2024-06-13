@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { getSpecificUnit } from "../../redux/actions/UnitsActions"
 import { useRoute } from "@react-navigation/native"
+import UnitPicturesSlider from "../../components/UnitPicturesSlider"
 
 
 const ContainerUnitTaps =()=>{
@@ -16,10 +17,8 @@ const ContainerUnitTaps =()=>{
     },[])
     return(
         <>
-        <SafeAreaView className={`flex-1 px-4`}>
-            <View className={`flex items-center justify-center py-10`}>
-                <Text>The Unit</Text>
-            </View>
+        <SafeAreaView className={`flex`}>
+            <UnitPicturesSlider />
         </SafeAreaView>
         <TopTabNavigation/>
         </>
