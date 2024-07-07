@@ -26,7 +26,6 @@ const UnitPicturesSlider = () => {
                 <LoadingData />
                 :
                 <Image
-                    // source={{ uri:"https://img.freepik.com/free-photo/low-angle-shot-modern-design-building-with-huge-ferris-wheel-bluewaters-island-dubai_181624-25722.jpg?t=st=1718305913~exp=1718309513~hmac=3f65f6ffca09dc35649ccc28a2b4919f6e5aa007037503bbcabfe9a6d16dca15&w=826" }}
                     source={{
                         uri: `${Object.keys(specificUnit).length <= 0 ?
                             "https://img.freepik.com/free-photo/grungy-white-background-natural-cement-stone-old-texture-as-retro-pattern-wall-conceptual-wa_1258-69519.jpg?t=st=1718309525~exp=1718313125~hmac=b00bf51a3454625d5fe928beeb1c34214eda627bb396d9b98b99b25b36be8128&w=996"
