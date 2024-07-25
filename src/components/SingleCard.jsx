@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import CustomButton from "./CustomButton";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { appColors } from "../themes/colors";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { addFavouritesUnit, getFavouritesUnit, removeFavouritesUnit } from "../redux/actions/favouriteUnitsAction";
 import { getAllUnits } from "../redux/actions/UnitsActions";
@@ -12,6 +12,7 @@ const SingleCard = ({ item }) => {
     const { activePage } = useSelector((state) => state.publicVariablesSlice)
     const dispatch = useDispatch()
     const navigation = useNavigation()
+    const router = useRoute()
     const viewSpecificUnit = () => {
         navigation.setParams({ unitId: item._id })
         navigation.navigate("unit-tabs", { unitId: item._id }
@@ -30,9 +31,9 @@ const SingleCard = ({ item }) => {
         <View className={`z-0 border-2 border-solid border-gray300 rounded-xl my-2 overflow-hidden`}>
             <View className={`w-full h-52 bg-lightColor relative`}>
                 {/* ADD & REMOVE FROM FAVOURITES BUTTON */}
-                <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={() => handleClickedFavourites(item?._id)}>
+                {router.name !== "my-units" && <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={() => handleClickedFavourites(item?._id)}>
                     <Ionicons name="heart" size={24} color={item.favourites.includes(currentUser?.id) ? appColors.mainColor : appColors.whiteColor} />
-                </TouchableOpacity>
+                </TouchableOpacity>}
                 {/* IMAGE */}
                 <Image
                     source={{
