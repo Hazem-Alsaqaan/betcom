@@ -12,7 +12,7 @@ const FavouriteScreen = () => {
         dispatch(getFavouritesUnit(token))
     }, [])
     return (
-        <View className={`flex-1 items-center justify-center`}>
+        <View className={`flex-1 items-center justify-center px-4`}>
             {favouriteUnitLoading ?
                 <LoadingData />
                 :
