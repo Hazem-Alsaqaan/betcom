@@ -2,24 +2,38 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import CustomButton from "./CustomButton";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { appColors } from "../themes/colors";
-import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavouritesUnit, getFavouritesUnit, removeFavouritesUnit } from "../redux/actions/favouriteUnitsAction";
+import { getAllUnits } from "../redux/actions/UnitsActions";
 
 const SingleCard = ({ item }) => {
+    const { token, currentUser } = useSelector((state) => state.AuthSlice)
+    const { activePage } = useSelector((state) => state.publicVariablesSlice)
+    const dispatch = useDispatch()
     const navigation = useNavigation()
-    const [favourite, setFavourite] = useState(false)
     const viewSpecificUnit = () => {
         navigation.setParams({ unitId: item._id })
-        navigation.navigate("unit-tabs", {unitId: item._id}
+        navigation.navigate("unit-tabs", { unitId: item._id }
         )
+    }
+    const handleClickedFavourites = (id) => {
+        if (item.favourites.includes(currentUser?.id)) {
+            dispatch(removeFavouritesUnit({ token: token, id: id }))
+        } else {
+            dispatch(addFavouritesUnit({ token: token, id: id }))
+        }
+        dispatch(getFavouritesUnit(token))
+        dispatch(getAllUnits({ token: token, page: activePage }))
     }
     return (
         <View className={`z-0 border-2 border-solid border-gray300 rounded-xl my-2 overflow-hidden`}>
-            {/* IMAGE BOX COMPONENT */}
             <View className={`w-full h-52 bg-lightColor relative`}>
-                <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={() => setFavourite((prev) => !prev)}>
-                    <Ionicons name="heart" size={24} color={favourite ? appColors.mainColor : appColors.whiteColor} />
+                {/* ADD & REMOVE FROM FAVOURITES BUTTON */}
+                <TouchableOpacity className={`absolute right-0 top-2 w-10 h-10 z-10`} onPress={() => handleClickedFavourites(item?._id)}>
+                    <Ionicons name="heart" size={24} color={item.favourites.includes(currentUser?.id) ? appColors.mainColor : appColors.whiteColor} />
                 </TouchableOpacity>
+                {/* IMAGE */}
                 <Image
                     source={{
                         uri: item?.images[0],

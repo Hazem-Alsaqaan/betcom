@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFavouritesUnit } from "../actions/favouriteUnitsAction";
+import {
+  addFavouritesUnit,
+  getFavouritesUnit,
+  removeFavouritesUnit,
+} from "../actions/favouriteUnitsAction";
 
 const favouriteUnitsSlice = createSlice({
   name: "favouriteUnits",
@@ -20,6 +24,28 @@ const favouriteUnitsSlice = createSlice({
       builder.addCase(getFavouritesUnit.rejected, (state, action) => {
         state.favouriteUnitLoading = false;
         state.favouriteUnitError = action.payload.errorMessage;
+      });
+    // Add favourites unites
+    builder.addCase(addFavouritesUnit.pending, (state, action) => {
+      state.favouriteUnitLoading = true;
+    }),
+      builder.addCase(addFavouritesUnit.fulfilled, (state, action) => {
+        state.favouriteUnitLoading = false;
+      }),
+      builder.addCase(addFavouritesUnit.rejected, (state, action) => {
+        state.favouriteUnitLoading = false;
+        state.favouriteUnitError = action.payload;
+      });
+    // Remove favourites unites
+    builder.addCase(removeFavouritesUnit.pending, (state, action) => {
+      state.favouriteUnitLoading = true;
+    }),
+      builder.addCase(removeFavouritesUnit.fulfilled, (state, action) => {
+        state.favouriteUnitLoading = false;
+      }),
+      builder.addCase(removeFavouritesUnit.rejected, (state, action) => {
+        state.favouriteUnitLoading = false;
+        state.favouriteUnitError = action.payload;
       });
   },
 });
