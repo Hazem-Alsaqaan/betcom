@@ -9,7 +9,7 @@ export const getAllUnits = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const response = await axios.get(
-        `${process.env.EXPO_PUBLIC_API_URL}/houses?&page=${item.page}&limit=8&allowPagination=true`,
+        `https://nestjs-now-saif3-osamakamelmohamed6-gmailcom.vercel.app/houses?&page=${item.page}&limit=8&allowPagination=true`,
         {
           headers: {
             Authorization: `Bearer ${item?.token}`,
@@ -39,7 +39,7 @@ export const searchUnits = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const response = await axios.get(
-        `${process.env.EXPO_PUBLIC_API_URL}/houses?&minimum_price=${item.minimumPrice}&highest_price=${item.heighestPrice}&rooms=${item.rooms}&page=${item.page}&limit=20&allowPagination=true`,
+        `https://nestjs-now-saif3-osamakamelmohamed6-gmailcom.vercel.app/houses?&minimum_price=${item.minimumPrice}&highest_price=${item.heighestPrice}&rooms=${item.rooms}&page=${item.page}&limit=20&allowPagination=true`,
         {
           headers: {
             Authorization: `Bearer ${item?.token}`,
