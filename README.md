@@ -9,3 +9,7 @@ run `npm install`
 ## step 3
 to display the app
 run `npx expo start`
+## step 4
+to login
+phone: 01017997927
+password: 01017997927
