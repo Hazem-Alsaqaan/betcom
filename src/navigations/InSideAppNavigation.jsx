@@ -19,7 +19,7 @@ const InSideAppNavigation = () => {
     <ButtomTab.Navigator
       screenOptions={{
         tabBarStyle: {
-          height: 95,
+          height: 80,
           paddingBottom: 12,
           paddingTop: 5,
           paddingHorizontal: 5,
@@ -142,7 +142,7 @@ const InSideAppNavigation = () => {
         name="profile"
         component={ProfileScreen}
         options={{
-          headerTitle: english ? "profile" : "الملف الشخصي",
+          headerTitle: english ? "profile" : "حسابي",
           headerTitleAlign: "center",
           headerTitleStyle: {
             color: appColors.mainColor,
@@ -155,7 +155,7 @@ const InSideAppNavigation = () => {
                 focused ? "text-mainColor" : "text-gray500"
               }`}
             >
-              {english ? "profile" : "الملف الشخصي"}
+              {english ? "profile" : "حسابي"}
             </Text>
           ),
           tabBarIcon: ({ focused }) => (

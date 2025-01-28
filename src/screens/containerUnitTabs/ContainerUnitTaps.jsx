@@ -1,5 +1,3 @@
-import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { TopTabNavigation } from "./TopTabNavigation";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";

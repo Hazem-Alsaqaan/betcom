@@ -19,9 +19,9 @@ const UserPicture = () => {
   };
 
   return (
-    <>
+    <View className={`flex-1 items-center justify-center`}>
       <View
-        className={`bg-neutral-100 h-40 w-40 rounded-full flex flex-row items-center justify-center`}
+        className={`bg-neutral-100 h-40 w-40 rounded-3xl flex flex-row items-center justify-center border-2 border-solid border-mainColor overflow-hidden`}
       >
         <TouchableOpacity
           className={`flex items-center m-1`}
@@ -33,14 +33,17 @@ const UserPicture = () => {
                 ? "https://res.cloudinary.com/dkhu7rt8n/image/upload/v1737907250/betcom/user_profile_phodu9.png"
                 : currentUser?.photo,
             }}
-            className={`w-32 h-32 rounded-lg z-10`}
+            className={`w-40 h-40 rounded-lg z-10`}
           />
         </TouchableOpacity>
       </View>
-      <View>
-        <Text>{currentUser.username}</Text>
+      <View className={`py-3 flex flex-row gap-1`}>
+        <Text className={`capitalize`}>you are welcome</Text>
+        <Text className={`capitalize text-mainColor`}>
+          {currentUser.username}
+        </Text>
       </View>
-    </>
+    </View>
   );
 };
 
