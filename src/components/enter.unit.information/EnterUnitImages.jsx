@@ -9,7 +9,7 @@ const EnterUnitImages = ({ unitInfo, setUnitInfo, componentInfo }) => {
   // handle function to picker images with using external library called expo-image-picker
   const imagePickerHandler = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaType,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
@@ -32,12 +32,10 @@ const EnterUnitImages = ({ unitInfo, setUnitInfo, componentInfo }) => {
   };
 
   return (
-    <View className={`my-3`}>
-      <View className={` p-2 flex flex-row items-center justify-end`}>
-        <Text className={`font-rubikBold text-mainColor`}>
-          {componentInfo.title}
-        </Text>
-      </View>
+    <View className={`w-full mt-5`}>
+      <Text className={`font-rubikBold text-mainColor text-center`}>
+        {componentInfo.title}
+      </Text>
       <View
         className={`bg-neutral-100 h-40 flex flex-row items-center justify-center`}
       >

@@ -5,16 +5,13 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 const EnterUnitType = ({ componentInfo, unitInfo, setUnitInfo }) => {
   const [unitType, setUnitType] = useState("ايجار");
   return (
-    <View className={`w-full`}>
-      <View className={` p-2 flex flex-row items-center justify-end`}>
-        <Text className={`font-rubikBold text-mainColor`}>
-          {componentInfo.title}
-        </Text>
-        <Text className={`mx-1 text-mainColor`}>({componentInfo.num})</Text>
-      </View>
-      <View className={`bg-neutral-50 px-5`}>
+    <View className={`w-full mt-5`}>
+      <Text className={`font-rubikBold text-mainColor text-center`}>
+        {componentInfo.title}
+      </Text>
+      <View className={`w-full bg-neutral-50 p-5 flex-row justify-center`}>
         <TouchableOpacity
-          className={`flex flex-row justify-end items-center my-2`}
+          className={`flex flex-row justify-center items-center my-2`}
           onPress={() => setUnitType("ايجار")}
         >
           <Text className={`font-rubikSemiBold mx-1 text-base`}>إيجار</Text>
@@ -33,7 +30,7 @@ const EnterUnitType = ({ componentInfo, unitInfo, setUnitInfo }) => {
           )}
         </TouchableOpacity>
         <TouchableOpacity
-          className={`flex flex-row justify-end items-center my-2`}
+          className={`flex flex-row justify-center items-center my-2`}
           onPress={() => setUnitType("تمليك")}
         >
           <Text className={`font-rubikSemiBold mx-1 text-base`}>تمليك</Text>

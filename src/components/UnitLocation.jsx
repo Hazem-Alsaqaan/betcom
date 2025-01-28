@@ -13,8 +13,7 @@ const UnitLocation = () => {
       {specificUnitLoading ? (
         <LoadingData />
       ) : (
-        <>
-          <Text>{specificUnit?.city}</Text>
+        <View className={`p-10`}>
           <MapView
             className={`w-full h-full`}
             region={{
@@ -23,6 +22,7 @@ const UnitLocation = () => {
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
+            // provider={PROVIDER_GOOGLE}
             mapType="standard"
             loadingEnabled={true}
           >
@@ -33,7 +33,7 @@ const UnitLocation = () => {
               }}
             />
           </MapView>
-        </>
+        </View>
       )}
     </View>
   );

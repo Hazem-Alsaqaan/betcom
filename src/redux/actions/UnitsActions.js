@@ -17,7 +17,7 @@ export const getAllUnits = createAsyncThunk(
           },
         }
       );
-      return response.data.docs;
+      return response.data;
     } catch (err) {
       if (!err.response) {
         throw err;

@@ -9,8 +9,8 @@ import { PaperProvider } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "./src/utils/configToastStyle";
-SplashScreen.preventAutoHideAsync();
 
+SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontsError] = useFonts({
     "rubik-light": require("./assets/fonts/Rubik-Light.ttf"),
@@ -32,7 +32,10 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView className={`flex-1 bg-whiteColor`} onLayout={loadFontsOnLayout}>
+    <SafeAreaView
+      className={`flex-1 bg-whiteColor`}
+      onLayout={loadFontsOnLayout}
+    >
       <Provider store={store}>
         <PaperProvider>
           <RootNavigation />
