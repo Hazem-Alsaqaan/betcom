@@ -9,10 +9,21 @@ import ThemeMood from "../components/ThemeMood";
 import { useDispatch, useSelector } from "react-redux";
 import ChangeLanguage from "../components/ChangeLanguage";
 import { userLoginWithPhone } from "../redux/actions/authActions";
+import { z } from "zod";
 import Toast from "react-native-toast-message";
 import { toastConfig } from "../utils/configToastStyle";
 import { appColors } from "../themes/colors";
+
 const SignInScreen = () => {
+  const userSchema = z.object({
+    phone: z
+      .string()
+      .min(1, "Phone is required")
+      .length(11, "phone number must be 11"),
+    password: z
+      .string()
+      .min(8, { message: "Password is must be 8 char at least" }),
+  });
   const dispatch = useDispatch();
   const [phone, setPhone] = useState();
   const [password, setPassword] = useState();
@@ -25,7 +36,18 @@ const SignInScreen = () => {
 
   // HANDLE LOGIN WITH PHONE AND PASSWORD
   const loginWithPhoneAndPassword = () => {
-    dispatch(userLoginWithPhone({ phone: `+2${phone}`, password: password }));
+    try {
+      userSchema.parse({ phone, password });
+      dispatch(userLoginWithPhone({ phone: `+2${phone}`, password: password }));
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        Toast.show({
+          type: "error",
+          text1: "Error Validation",
+          text2: err.issues[0].message, // Set errors for display
+        });
+      }
+    }
   };
   return (
     <SafeAreaView

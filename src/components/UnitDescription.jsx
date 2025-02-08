@@ -2,7 +2,6 @@ import { ScrollView, Text, View } from "react-native";
 import { useSelector } from "react-redux";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { appColors } from "../themes/colors";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import CustomButton from "./CustomButton";
 import { I18nManager } from "react-native";
 
